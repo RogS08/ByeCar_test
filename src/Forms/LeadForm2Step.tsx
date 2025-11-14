@@ -1,7 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 
 // ---------- Config ----------
-const API_ENDPOINT = "http://localhost:4000/api/sendemail"; // Vul eventueel een endpoint in
+const API_BASE_URL = import.meta.env.VITE_API_ENDPOINT?.replace(/\/+$/, "") || "http://localhost:4000";
+
+console.log("API_BASE_URL", API_BASE_URL);
+
+const API_ENDPOINT = `${API_BASE_URL}/api/sendemail`;
 const MAIL_TO = "";
 const SUBMIT_LABEL = "Bod aanvragen";
 
